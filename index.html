@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasa Penyedia Layanan SSH, VMESS, VLESS, dan TROJAN</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Selamat Datang di Layanan SSH, VMESS, VLESS, dan TROJAN</h1>
+        <p>Penyedia layanan proxy berkualitas tinggi untuk kebutuhan Anda.</p>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>Pilih Perangkat Anda</h2>
+            <div class="device-buttons">
+                <button onclick="selectDevice('HP'); playSound()">HP</button>
+                <button onclick="selectDevice('STB'); playSound()">STB</button>
+            </div>
+        </section>
+
+        <section id="serviceSection" style="display: none;">
+            <h2>Pilih Layanan Anda</h2>
+            <div class="service-selector">
+                <select id="serviceSelect" onchange="showServerOptions(); playSound()">
+                    <option value="">-- Pilih Layanan --</option>
+                    <option value="SSH">SSH</option>
+                    <option value="VMESS">VMESS</option>
+                    <option value="VLESS">VLESS</option>
+                    <option value="TROJAN">TROJAN</option>
+                </select>
+            </div>
+        </section>
+
+        <section id="serverSection" style="display: none;">
+            <h2>Pilih Server Anda</h2>
+            <div class="server-selector">
+                <select id="serverSelect" onchange="showServerDescription(); playSound()">
+                    <!-- Server options will be dynamically populated -->
+                </select>
+            </div>
+            <div id="serverDescription" class="server-description"></div>
+            <button class="buy-button" onclick="openPopup(); playSound()">Beli Sekarang</button>
+        </section>
+
+        <section>
+            <h2>Kontak Kami</h2>
+            <p>Jika ada pertanyaan, silakan hubungi kami melalui WhatsApp:</p>
+            <a href="https://wa.me/6285964161593" target="_blank" style="text-decoration: none;">
+                <button class="buy-button" onclick="playSound()">Hubungi via WhatsApp</button>
+            </a>
+        </section>
+    </div>
+
+    <!-- Popup -->
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <h3>Masukkan Data Order</h3>
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button onclick="submitOrder(); playSound()">Kirim Pesan</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Layanan SSH, VMESS, VLESS, dan TROJAN. All rights reserved.</p>
+    </footer>
+
+    <!-- Suara Klik -->
+    <audio id="clickSound" src="assets/beep-07.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
